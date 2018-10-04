@@ -12,7 +12,6 @@ while true; do
 	  echo "Mismatch. try again"
 done
 
-
 setup(){
   # uefi
   [ -d "/sys/firmware/efi/efivar" ] || { echo "Fail: no uefi."; exit 1}
@@ -38,7 +37,7 @@ setup(){
   pacstrap /mnt base base-devel
   genfstab -U /mnt >> /mnt/etc/fstab
   arch-chroot /mnt
-  printf "$user\n$host\n$pw\n$pw\n" arch-chroot sh $0 chroot
+  printf "$user\n$host\n$pw\n$pw\n" arch-chroot sh ark.sh chroot
 }
 
 configure(){
