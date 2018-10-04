@@ -96,10 +96,4 @@ configure(){
 	pacman -S ibus ibus-qt ibus-anthy
 	yay -S ibus-mozc mozc-ut2
 }
-
-if [ "$1" == "chroot" ]
-then
-    configure
-else
-    setup
-fi
+[ "$1" == "chroot" ] && configure || setup
