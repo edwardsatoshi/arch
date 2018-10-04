@@ -35,7 +35,7 @@ setup(){
   pacstrap /mnt base base-devel
   genfstab -U /mnt >> /mnt/etc/fstab
   arch-chroot /mnt
-  printf "$user\n$host\n$pw\n$pw\n" arch-chroot sh $0 chroot
+  printf "$user\n$host\n$pw\n$pw\n" arch-chroot sh a.sh chroot
 }
 
 configure(){
