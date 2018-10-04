@@ -1,1 +1,1 @@
-# ark
+### arch installer bash script
