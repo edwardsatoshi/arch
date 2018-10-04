@@ -98,4 +98,4 @@ configure(){
 
 set -ex
 
-configure
+[ "$1" == "chroot" ] && configure || setup
