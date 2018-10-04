@@ -1,3 +1,5 @@
+#!/bin/bash
+
 read -p "User name: " $user
 read -p "Host name: " $host
 
@@ -16,8 +18,7 @@ setup(){
   [ -d "/sys/firmware/efi/efivar" ] || { echo "Fail: no uefi."; exit 1}
 
   #internet
-  ping -q -c 1 -W 1 https://www.archlinux.org >/dev/null ||
-  {echo -e "Fail: no internet. tip: \e[32mGreen wifi-menu \e[39mDefault command connects to wifi\n "; exit 1}
+  ping -q -c 1 -W 1 https://www.archlinux.org >/dev/null || {echo -e "Fail: no internet. tip: \e[32mGreen wifi-menu \e[39mDefault command connects to wifi\n "; exit 1}
 
   timedatectl set-ntp true
 
@@ -37,7 +38,7 @@ setup(){
   genfstab -U /mnt >> /mnt/etc/fstab
   arch-chroot /mnt
   printf "$user\n$host\n$pw\n$pw\n" arch-chroot sh $0 chroot
-}
+
 
 configure(){
 
