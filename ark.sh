@@ -96,4 +96,6 @@ configure(){
 	yay -S ibus-mozc mozc-ut2
 }
 
+set -ex
+
 [ "$1" == "chroot" ] && configure || setup
